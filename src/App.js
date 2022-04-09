@@ -33,11 +33,14 @@ function App() {
     while (cantidadElec < Z) {
       if (Z - cantidadElec < diagonalOrbitales[n][l].electrones) {
         configuracion = configuracion + diagonalOrbitales[n][l].n + diagonalOrbitales[n][l].tipo + (Z - cantidadElec) + " ";
-        cantidadElec += Z - cantidadElec;
         electronesEnOrbital = Z - cantidadElec;
+        cantidadElec += Z - cantidadElec;
+        console.log("cantidad de electrones 1", cantidadElec);
+        
       } else {
         configuracion = configuracion + diagonalOrbitales[n][l].n + diagonalOrbitales[n][l].tipo + (diagonalOrbitales[n][l].electrones) + " ";
         cantidadElec += diagonalOrbitales[n][l].electrones;
+        console.log("cantidad de electrones 2", cantidadElec);
         electronesEnOrbital = diagonalOrbitales[n][l].electrones;
       }
 
@@ -45,25 +48,24 @@ function App() {
 
       switch (orbital.tipo) {
         case "s":
-          const sOrbs = procesarOrbitalS(orbital.n)
+          const sOrbs = procesarOrbitalS(orbital.n, electronesEnOrbital)
           orbs = [...orbs, ...sOrbs];
           break;
         case "p":
-          const pOrbs = procesarOrbitalP(orbital.n)
+          const pOrbs = procesarOrbitalP(orbital.n, electronesEnOrbital)
           orbs = [...orbs, ...pOrbs];
           break;
         case "d":
-          const dOrbs = procesarOrbitalD(orbital.n)
+          const dOrbs = procesarOrbitalD(orbital.n, electronesEnOrbital)
           orbs = [...orbs, ...dOrbs];
           break;
         case "f":
-          const fOrbs = procesarOrbitalF(orbital.n)
+          const fOrbs = procesarOrbitalF(orbital.n, electronesEnOrbital)
           orbs = [...orbs, ...fOrbs];
           break;
         default:
           break;
       }
-
 
       if (l - 1 >= 0) {
         l--;
@@ -86,7 +88,7 @@ function App() {
     setConfiguracionElec(configuracion);
   }
 
-  const procesarOrbitalS = (n) => {
+  const procesarOrbitalS = (n, cant) => {
     let orbs = [{
       electro: n + "s1",
       n: n,
@@ -100,10 +102,10 @@ function App() {
       m: "0",
       s: "-1/2",
     }];
-    return orbs;
+    return orbs.slice(0, cant);
   }
 
-  const procesarOrbitalP = (n) => {
+  const procesarOrbitalP = (n, cant) => {
     let orbs = [{
       electro: n + "p1",
       n: n,
@@ -141,10 +143,10 @@ function App() {
       m: "1",
       s: "-1/2",
     }]
-    return orbs;
+    return orbs.slice(0, cant);
   }
 
-  const procesarOrbitalD = (n) => {
+  const procesarOrbitalD = (n, cant) => {
     let orbs = [{
       electro: n + "d1",
       n: n,
@@ -179,49 +181,37 @@ function App() {
       electro: n + "d6",
       n: n,
       l: "2",
-      m: "-3",
+      m: "-2",
       s: "-1/2",
     }, {
       electro: n + "d7",
       n: n,
       l: "2",
-      m: "3",
-      s: "1/2",
+      m: "-1",
+      s: "-1/2",
     }, {
       electro: n + "d8",
       n: n,
       l: "2",
-      m: "-4",
+      m: "0",
       s: "-1/2",
     }, {
       electro: n + "d9",
       n: n,
       l: "2",
-      m: "4",
-      s: "1/2",
+      m: "1",
+      s: "-1/2",
     }, {
       electro: n + "d10",
       n: n,
       l: "2",
-      m: "-5",
+      m: "2",
       s: "-1/2",
-    }, {
-      electro: n + "d11",
-      n: n,
-      l: "2",
-      m: "5",
-      s: "1/2",
-    }, {
-      electro: n + "d12",
-      n: n,
-      l: "2",
-      m: "-6",
-      s: "-1/2",
-    }]
-    return orbs;
+    }];
+    return orbs.slice(0, cant);
   }
 
-  const procesarOrbitalF = (n) => {
+  const procesarOrbitalF = (n, cant) => {
     let orbs = [{
       electro: n + "f1",
       n: n,
@@ -262,52 +252,52 @@ function App() {
       electro: n + "f7",
       n: n,
       l: "3",
-      m: "-4",
-      s: "-1/2",
+      m: "3",
+      s: "1/2",
     }, {
       electro: n + "f8",
       n: n,
       l: "3",
-      m: "4",
-      s: "1/2",
+      m: "-3",
+      s: "-1/2",
     }, {
       electro: n + "f9",
       n: n,
       l: "3",
-      m: "-5",
+      m: "-2",
       s: "-1/2",
     }, {
       electro: n + "f10",
       n: n,
       l: "3",
-      m: "5",
-      s: "1/2",
+      m: "-1",
+      s: "-1/2",
     }, {
       electro: n + "f11",
       n: n,
       l: "3",
-      m: "-6",
+      m: "0",
       s: "-1/2",
     }, {
       electro: n + "f12",
       n: n,
       l: "3",
-      m: "6",
-      s: "1/2",
+      m: "1",
+      s: "-1/2",
     }, {
       electro: n + "f13",
       n: n,
       l: "3",
-      m: "-7",
+      m: "2",
       s: "-1/2",
     }, {
       electro: n + "f14",
       n: n,
       l: "3",
-      m: "7",
-      s: "1/2",
+      m: "3",
+      s: "-1/2",
     }]
-    return orbs;
+    return orbs.slice(0, cant);
   }
 
   return (
@@ -335,12 +325,15 @@ function App() {
 
 const NumerosAtomicos = ({ numeroAtomicos }) => {
 
+
+
   return (
 
     <div style={{ display: "flex", flexDirection: "row"}}>
       {numeroAtomicos && numeroAtomicos.map((element, index) => {
         return (
           <>
+            {(index%4 === 0) ? (<div style={{display: "flex", flexDirection: "row"}}></div>) : (<></>)}
             <div key={element.electro} style={{
               height: "160px",
               width: "120px",
