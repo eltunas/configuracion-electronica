@@ -35,12 +35,9 @@ function App() {
         configuracion = configuracion + diagonalOrbitales[n][l].n + diagonalOrbitales[n][l].tipo + (Z - cantidadElec) + " ";
         electronesEnOrbital = Z - cantidadElec;
         cantidadElec += Z - cantidadElec;
-        console.log("cantidad de electrones 1", cantidadElec);
-        
       } else {
         configuracion = configuracion + diagonalOrbitales[n][l].n + diagonalOrbitales[n][l].tipo + (diagonalOrbitales[n][l].electrones) + " ";
         cantidadElec += diagonalOrbitales[n][l].electrones;
-        console.log("cantidad de electrones 2", cantidadElec);
         electronesEnOrbital = diagonalOrbitales[n][l].electrones;
       }
 
@@ -49,19 +46,26 @@ function App() {
       switch (orbital.tipo) {
         case "s":
           const sOrbs = procesarOrbitalS(orbital.n, electronesEnOrbital)
-          orbs = [...orbs, ...sOrbs];
+          //orbs = [...orbs, ...sOrbs];
+          orbs.push([...sOrbs]);
           break;
         case "p":
           const pOrbs = procesarOrbitalP(orbital.n, electronesEnOrbital)
-          orbs = [...orbs, ...pOrbs];
+          //orbs = [...orbs, ...pOrbs];
+          orbs.push([...pOrbs]);
           break;
         case "d":
           const dOrbs = procesarOrbitalD(orbital.n, electronesEnOrbital)
-          orbs = [...orbs, ...dOrbs];
+          //orbs = [...orbs, ...dOrbs];
+          orbs.push([...dOrbs.slice(0, Math.ceil(dOrbs.length/2))]);
+          orbs.push([...dOrbs.slice(Math.ceil(dOrbs.length/2), dOrbs.length)]);
+
           break;
         case "f":
           const fOrbs = procesarOrbitalF(orbital.n, electronesEnOrbital)
-          orbs = [...orbs, ...fOrbs];
+          //orbs = [...orbs, ...fOrbs];
+          orbs.push([...fOrbs.slice(0, Math.ceil(fOrbs.length/2))]);
+          orbs.push([...fOrbs.slice(Math.ceil(fOrbs.length/2), fOrbs.length)]);
           break;
         default:
           break;
@@ -84,6 +88,7 @@ function App() {
       n = n + 1;
 
     }
+    console.log("orbs", orbs);
     await setNumerosAtomicos(orbs)
     setConfiguracionElec(configuracion);
   }
@@ -310,12 +315,14 @@ function App() {
               Ingresa el valor de Z!
             </p>
             <input type="number" onChange={(e) => setZ(e.target.value)} />
-            <button onClick={() => getElectronConfiguracion(Z)}>Calcular Conf</button>
+            <button onClick={async () => await getElectronConfiguracion(Z)}>Calcular Conf</button>
           </div>
           <div className='conf-container'>
             {configuracionElec}
-
-            <NumerosAtomicos numeroAtomicos={numeroAtomicos}></NumerosAtomicos>
+            {numeroAtomicos && numeroAtomicos.map((orb) => {
+              return (<NumerosAtomicos numsAtoms={orb}></NumerosAtomicos>)
+            })}
+            
           </div>
         </div>
       </header>
@@ -323,17 +330,21 @@ function App() {
   );
 }
 
-const NumerosAtomicos = ({ numeroAtomicos }) => {
+const NumerosAtomicos = ({ numsAtoms }) => {
 
+  const [showNums, setshowNums] = useState(false);
 
+  useEffect(() => {
+    setshowNums(numsAtoms && numsAtoms.length > 0);
+  } , [numsAtoms, showNums, setshowNums])
 
   return (
 
-    <div style={{ display: "flex", flexDirection: "row"}}>
-      {numeroAtomicos && numeroAtomicos.map((element, index) => {
+    <div style={{ display: "flex", flexDirection: "row", alignContent: "start" }}>
+      
+      {showNums && numsAtoms.map((element, index) => {
         return (
           <>
-            {(index%4 === 0) ? (<div style={{display: "flex", flexDirection: "row"}}></div>) : (<></>)}
             <div key={element.electro} style={{
               height: "160px",
               width: "120px",
@@ -348,9 +359,6 @@ const NumerosAtomicos = ({ numeroAtomicos }) => {
               <div style={{}}>m: {element.m}</div>
               <div style={{}}>s: {element.s}</div>
             </div>
-            {index != 0 &&
-              numeroAtomicos[index - 1] &&
-              numeroAtomicos[index - 1].electro.charAt(0) != element.electro.charAt(0) ? (<br></br>) : null}
           </>
         )
       })}
