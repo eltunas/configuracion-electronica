@@ -73,7 +73,7 @@ const Lewis = () => {
                     x: 3,
                     y: 2,
                     type: "e",
-                    component: <CovalenteHorizontal />
+                    component: <CovalenteHorizontalDoble />
                 },
                 {
                     nombre: "H",
@@ -198,11 +198,58 @@ const Sulfuro = () => {
 }
 
 const CovalenteVertical = () => {
-    return (<div style={{transform: "rotate(90deg)"}}><BsDashLg /></div>)
+    return (<div style={{ transform: "rotate(90deg)" }}><BsDashLg /></div>)
+}
+
+const CovalenteVerticalDoble = () => {
+    return (
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ transform: "rotate(90deg)" }}>
+                <BsDashLg />
+            </div>
+            <div style={{ transform: "rotate(90deg)" }}>
+                <BsDashLg />
+            </div>
+        </div>)
+}
+
+const CovalenteVerticalTriple = () => {
+    return (
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ transform: "rotate(90deg)" }}>
+                <BsDashLg />
+            </div>
+            <div style={{ transform: "rotate(90deg)" }}>
+                <BsDashLg />
+            </div>
+            <div style={{ transform: "rotate(90deg)" }}>
+                <BsDashLg />
+            </div>
+        </div>
+    )
 }
 
 const CovalenteHorizontal = () => {
     return (<BsDashLg />)
+}
+
+const CovalenteHorizontalDoble = () => {
+    return (
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <BsDashLg />
+            <BsDashLg />
+        </div>
+    )
+}
+
+const CovalenteHorizontalTriple = () => {
+    return (
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <BsDashLg />
+            <BsDashLg />
+            <BsDashLg />
+        </div>
+    )
 }
 
 const DativoUp = () => {
