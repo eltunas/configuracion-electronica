@@ -24,6 +24,15 @@
   color: white;
 }
 
+.inputz {
+  background-color: #282c34;
+  color: white;
+  width: 250px;
+  height: 30px;
+  border: white solid 3px;
+  border-radius: 5px;
+}
+
 .App-link {
   color: #61dafb;
 }

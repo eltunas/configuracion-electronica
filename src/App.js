@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Lewis from './lewis/Lewis';
 
 const diagonalOrbitales = [
   [{ tipo: "s", electrones: 2, n: 1 }],
@@ -140,7 +141,7 @@ function App() {
       n: n,
       l: "1",
       m: "0",
-      s: "1/2",
+      s: "-1/2",
     }, {
       electro: n + "p6",
       n: n,
@@ -309,21 +310,37 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='content-container'>
-          <div className='input-container'>
+          {/*<div className='input-container'>
             <img src={logo} className="App-logo" alt="logo" />
             <p>
               Ingresa el valor de Z!
             </p>
-            <input type="number" onChange={(e) => setZ(e.target.value)} />
-            <button onClick={async () => await getElectronConfiguracion(Z)}>Calcular Conf</button>
+            <input style={{
+              backgroundColor: "#282c34",
+              color: "white",
+              width: "250px",
+              height: "30px",
+              border: "white solid 3px",
+              borderCadius: "30px",
+            }} type="number" onChange={(e) => setZ(e.target.value)} />
+            <button style={{
+              width: "180px",
+              height: "50px",
+              backgroundColor: "#77BB00",
+              color: "white",
+              borderRadius: "30px",
+              fontSize: "20px",
+              marginTop: "10px",
+            }} onClick={async () => await getElectronConfiguracion(Z)}>Calcular</button>
           </div>
           <div className='conf-container'>
-            {configuracionElec}
+            <div style={{margin: "15px"}}>{configuracionElec}</div>
             {numeroAtomicos && numeroAtomicos.map((orb) => {
               return (<NumerosAtomicos numsAtoms={orb}></NumerosAtomicos>)
             })}
             
-          </div>
+          </div>*/}
+          <Lewis></Lewis>
         </div>
       </header>
     </div>
