@@ -15,8 +15,8 @@ import { BsDashLg } from "react-icons/bs";
 
 
 
-const xPos = [0, 1, 2, 3, 4, 5, 6, 7]
-const yPos = [0, 1, 2, 3, 4, 5, 6, 7]
+const xPos = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+const yPos = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 const Lewis = () => {
 
@@ -26,131 +26,359 @@ const Lewis = () => {
             items: [
                 {
                     nombre: "H",
-                    x: 2,
+                    x: 3,
                     y: 0,
                     type: "a",
                     component: <Hidrogeno />
                 }, {
                     nombre: "H",
-                    x: 4,
+                    x: 5,
                     y: 0,
                     type: "a",
                     component: <Hidrogeno />
                 }, {
                     nombre: "cov-ver",
-                    x: 2,
+                    x: 3,
                     y: 1,
                     type: "e",
                     component: <CovalenteVertical />
                 }, {
                     nombre: "cov-ver",
-                    x: 4,
+                    x: 5,
                     y: 1,
                     type: "e",
                     component: <CovalenteVertical />
                 }, {
                     nombre: "c",
-                    x: 2,
+                    x: 3,
                     y: 2,
                     type: "a",
                     component: <Carbono />
                 }, {
                     nombre: "c",
-                    x: 4,
+                    x: 5,
                     y: 2,
                     type: "a",
                     component: <Carbono />
                 }, {
                     nombre: "cov-hor",
-                    x: 3,
+                    x: 4,
                     y: 2,
                     type: "e",
                     component: <CovalenteHorizontalDoble />
                 }, {
                     nombre: "cov-hor",
-                    x: 1,
+                    x: 2,
                     y: 2,
                     type: "e",
                     component: <CovalenteHorizontal />
                 },
                 {
                     nombre: "H",
-                    x: 0,
+                    x: 1,
                     y: 2,
                     type: "a",
                     component: <Hidrogeno />
                 }, {
                     nombre: "cov-hor",
-                    x: 5,
+                    x: 6,
                     y: 2,
                     type: "e",
                     component: <CovalenteHorizontal />
                 },
                 {
                     nombre: "H",
-                    x: 6,
+                    x: 7,
                     y: 2,
                     type: "a",
                     component: <Hidrogeno />
                 },
             ],
             options: [
-                <Hidrogeno />,
-                <Hidrogeno />,
-                <Carbono />,
-                <Hidrogeno />,
-                <Hidrogeno />,
-                <Carbono />,
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "S",
+                    comp: <Sulfuro />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "C",
+                    comp: <Carbono />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "C",
+                    comp: <Carbono />
+                },
+            ]
+        },
+        {
+            nombre: "H20",
+            items: [
+                {
+                    nombre: "H",
+                    x: 2,
+                    y: 3,
+                    type: "a",
+                    component: <Hidrogeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 3,
+                    y: 3,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                },{
+                    nombre: "O",
+                    x: 4,
+                    y: 3,
+                    type: "a",
+                    component: <Oxigeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 5,
+                    y: 3,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                }, {
+                    nombre: "H",
+                    x: 6,
+                    y: 3,
+                    type: "a",
+                    component: <Hidrogeno />
+                }],
+            options: [
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "S",
+                    comp: <Sulfuro />
+                },
+                {
+                    name: "C",
+                    comp: <Carbono />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "S",
+                    comp: <Sulfuro />
+                },
+            ]
+        },  {
+            nombre: "H2SO4",
+            items: [
+                {
+                    nombre: "H",
+                    x: 0,
+                    y: 4,
+                    type: "a",
+                    component: <Hidrogeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 1,
+                    y: 4,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                },{
+                    nombre: "O",
+                    x: 2,
+                    y: 4,
+                    type: "a",
+                    component: <Oxigeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 3,
+                    y: 4,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                }, {
+                    nombre: "S",
+                    x: 4,
+                    y: 4,
+                    type: "a",
+                    component: <Sulfuro />
+                }, {
+                    nombre: "cov-hor",
+                    x: 5,
+                    y: 4,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                },{
+                    nombre: "O",
+                    x: 6,
+                    y: 4,
+                    type: "a",
+                    component: <Oxigeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 7,
+                    y: 4,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                },{
+                    nombre: "H",
+                    x: 8,
+                    y: 4,
+                    type: "a",
+                    component: <Hidrogeno />
+                }, {
+                    nombre: "O",
+                    x: 4,
+                    y: 2,
+                    type: "a",
+                    component: <Oxigeno />
+                }, {
+                    nombre: "O",
+                    x: 4,
+                    y: 6,
+                    type: "a",
+                    component: <Oxigeno />
+                },  {
+                    nombre: "cov-ver",
+                    x: 4,
+                    y: 3,
+                    type: "e",
+                    component: <CovalenteVerticalDoble />
+                },  {
+                    nombre: "cov-ver",
+                    x: 4,
+                    y: 5,
+                    type: "e",
+                    component: <CovalenteVerticalDoble />
+                },
+            ],
+            options: [
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                }, {
+                    name: "C",
+                    comp: <Carbono />
+                },
+                {
+                    name: "S",
+                    comp: <Sulfuro />
+                },
+                {
+                    name: "C",
+                    comp: <Carbono />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },{
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                },{
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "S",
+                    comp: <Sulfuro />
+                },{
+                    name: "O",
+                    comp: <Oxigeno />
+                },
             ]
         }
     ];
 
-    const [moleculaConsigna, setConsigna] = useState(0);
+    const [selectedConsigna, setConsigna] = useState(0);
 
     const [selectedOption, setSelectedOption] = useState({});
 
     const [usedOptions, setUsedOptions] = useState([])
 
+    const [correctAtoms, setCorrectAtoms] = useState([])
+
     useEffect(() => {
-        setConsigna(0)
-    }, [moleculaConsigna]);
+        console.log(selectedConsigna);
+    }, [selectedConsigna]);
+
+    const changeConsigna = (n) => {
+        setConsigna(n);
+        setSelectedOption({});
+        setUsedOptions([]);
+        setCorrectAtoms([])
+    }
 
     const GridItem = ({ x, y, molecula }) => {
         const getElement = () => {
             const element = molecula && molecula.items.find(item => item.x === x && item.y === y);
             if (element) {
                 if (element.type === "a") {
-                    return <Atom name={element.nombre} comp={element.component} molecula={molecula} />
+                    return <Atom xAtom={x} yAtom={y} name={element.nombre} comp={element.component} molecula={molecula} />
                 } else {
                     return <Bond comp={element.component} />
                 }
             } else {
                 //espacio en blanco
-                return (<Empty />)
+                return (<><Empty /></>)
             }
         }
         return <>{getElement()}</>
     }
 
-    const Atom = ({ name, comp, molecula, selectOption }) => {
-
-        const [showComp, setShowComp] = useState(false)
+    const Atom = ({ xAtom, yAtom, name, comp, molecula }) => {
 
         //cuando se le hace click, checkear si el seleccionado de opciones es el mismo y cambiar al atomo que corresponde
         const handleOnClick = () => {
-            if(selectedOption && selectedOption.name === name) {
+            console.log(selectedOption)
+            console.log(selectedOption.name)
+            if(selectedOption && selectedOption.name.toUpperCase() === name.toUpperCase()) {
                 const newUsed = [...usedOptions];
                 newUsed.push(selectedOption.id);
                 setUsedOptions(newUsed);
-                setShowComp(true);
+
+                const newCorrect = [...correctAtoms];
+                newCorrect.push(""+xAtom+yAtom)
+                setCorrectAtoms(newCorrect);
+
+                setSelectedOption({})
             }
         }
 
         return (
             <div style={{ width: "50px", height: "50px", fontSize: "10" }} onClick={() => handleOnClick()}>
-                {showComp ? 
-                    <>{comp}</> : 
-                    <div style={{ margin: "5px", width: "40px", height: "40px", borderRadius: "20px", backgroundColor: "white" }}></div>}
+                {correctAtoms.includes(""+xAtom+yAtom) ? <>{comp}</> : <div style={{ margin: "5px", width: "40px", height: "40px", borderRadius: "20px", backgroundColor: "white" }}></div>}
             </div>
         )
     }
@@ -158,9 +386,13 @@ const Lewis = () => {
 
     return (<>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 Ubica los elementos el los lugares correspondientes de la molecula en base a sus enlaces
-                <button onClick={() => setConsigna(0)}>H4C2</button>
+                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                    <button onClick={() => changeConsigna(0)}>H4C2</button>
+                    <button onClick={() => changeConsigna(1)}>H2O</button>
+                    <button onClick={() => changeConsigna(2)}>H2SO4</button>
+                </div>
             </div>
             <div>
                 {
@@ -168,7 +400,7 @@ const Lewis = () => {
                         return (
                             <div style={{ display: "flex", felxDirection: "column" }}>
                                 {xPos.map(xP => {
-                                    return <GridItem id={"grid-" + xP + "-" + yP} key={"grid-" + xP + "-" + yP} x={xP} y={yP} molecula={consignas[selectedOption]} />
+                                    return <GridItem id={"grid-" + xP + "-" + yP} key={"grid-" + xP + "-" + yP} x={xP} y={yP} molecula={consignas[selectedConsigna]} />
                                 })}
                             </div>
                         )
@@ -178,9 +410,12 @@ const Lewis = () => {
             <div>
                 opciones
                 <div style={{ height: "50px", display: "flex", flexDirection: "row", border: "solid 1px white", borderRadius: "15px", backgroundColor: "gray", justifyContent: "center", alignItems: "center" }}>
-                    {console.log(consignas[0].options)}
-                    {consignas[0] && consignas[0].options.map((op, index) => {
-                        return <div onClick={() => {setSelectedOption({id: index, ...op})}}>{op}</div>;
+                    {consignas[selectedConsigna] && consignas[selectedConsigna].options.map((op, index) => {
+                        return usedOptions.includes(index) ? 
+                            <></> : 
+                            (<div style={selectedOption.id === index ? {border: "solid 1px white", borderRadius: "15px"} : {}} onClick={() => {setSelectedOption({id: index, name: op.name})}}>
+                                {op.comp}
+                            </div>)
                     })}
                 </div>
             </div>
@@ -189,7 +424,7 @@ const Lewis = () => {
 }
 
 const Bond = ({ comp }) => {
-    return (<div style={{ width: "50px", height: "50px", fontSize: "10" }}>
+    return (<div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", width: "50px", height: "50px", fontSize: "10" }}>
         {comp}
     </div>)
 }
@@ -200,7 +435,7 @@ const Empty = () => {
 
 const Oxigeno = () => {
     return (
-        <div style={{ margin: "5px", backgroundColor: "#5540ff", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center",margin: "5px", backgroundColor: "#5540ff", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
             O
         </div>
     )
@@ -208,7 +443,7 @@ const Oxigeno = () => {
 
 const Hidrogeno = () => {
     return (
-        <div style={{ margin: "5px", backgroundColor: "#a6e6a7", color: "black", width: "40px", height: "40px", borderRadius: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center",margin: "5px", backgroundColor: "#a6e6a7", color: "black", width: "40px", height: "40px", borderRadius: "20px" }}>
             H
         </div>
     )
@@ -216,7 +451,7 @@ const Hidrogeno = () => {
 
 const Carbono = () => {
     return (
-        <div style={{ margin: "5px", backgroundColor: "#c09d55", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center",margin: "5px", backgroundColor: "#c09d55", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
             C
         </div>
     )
@@ -224,7 +459,7 @@ const Carbono = () => {
 
 const Sulfuro = () => {
     return (
-        <div style={{ margin: "5px", backgroundColor: "#8d00ff", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center",margin: "5px", backgroundColor: "#8d00ff", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
             S
         </div>
     )
