@@ -101,7 +101,7 @@ const Lewis = () => {
                 },
                 {
                     name: "S",
-                    comp: <Sulfuro />
+                    comp: <Azufre />
                 },
                 {
                     name: "H",
@@ -170,7 +170,7 @@ const Lewis = () => {
                 },
                 {
                     name: "S",
-                    comp: <Sulfuro />
+                    comp: <Azufre />
                 },
                 {
                     name: "C",
@@ -190,7 +190,7 @@ const Lewis = () => {
                 },
                 {
                     name: "S",
-                    comp: <Sulfuro />
+                    comp: <Azufre />
                 },
             ]
         },  {
@@ -225,7 +225,7 @@ const Lewis = () => {
                     x: 4,
                     y: 4,
                     type: "a",
-                    component: <Sulfuro />
+                    component: <Azufre />
                 }, {
                     nombre: "cov-hor",
                     x: 5,
@@ -267,13 +267,13 @@ const Lewis = () => {
                     x: 4,
                     y: 3,
                     type: "e",
-                    component: <CovalenteVerticalDoble />
+                    component: <DativoUp />
                 },  {
                     nombre: "cov-ver",
                     x: 4,
                     y: 5,
                     type: "e",
-                    component: <CovalenteVerticalDoble />
+                    component: <DativoDown />
                 },
             ],
             options: [
@@ -286,7 +286,7 @@ const Lewis = () => {
                 },
                 {
                     name: "S",
-                    comp: <Sulfuro />
+                    comp: <Azufre />
                 },
                 {
                     name: "C",
@@ -312,11 +312,121 @@ const Lewis = () => {
                 },
                 {
                     name: "S",
-                    comp: <Sulfuro />
+                    comp: <Azufre />
                 },{
                     name: "O",
                     comp: <Oxigeno />
                 },
+            ]
+        },
+        {
+            nombre: "HClO4",
+            items: [
+                {
+                    nombre: "H",
+                    x: 1,
+                    y: 5,
+                    type: "a",
+                    component: <Hidrogeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 2,
+                    y: 5,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                },{
+                    nombre: "O",
+                    x: 3,
+                    y: 5,
+                    type: "a",
+                    component: <Oxigeno />
+                }, {
+                    nombre: "cov-hor",
+                    x: 4,
+                    y: 5,
+                    type: "e",
+                    component: <CovalenteHorizontal />
+                }, {
+                    nombre: "Cl",
+                    x: 5,
+                    y: 5,
+                    type: "a",
+                    component: <Cloro />
+                },{
+                    nombre: "O",
+                    x: 5,
+                    y: 3,
+                    type: "a",
+                    component: <Oxigeno />
+                },{
+                    nombre: "O",
+                    x: 5,
+                    y: 7,
+                    type: "a",
+                    component: <Oxigeno />
+                },{
+                    nombre: "O",
+                    x: 7,
+                    y: 5,
+                    type: "a",
+                    component: <Oxigeno />
+                }, {
+                    nombre: "dat-up",
+                    x: 5,
+                    y: 4,
+                    type: "e",
+                    component: <DativoUp />
+                }, {
+                    nombre: "dat-right",
+                    x: 6,
+                    y: 5,
+                    type: "e",
+                    component: <DativoDer />
+                }, {
+                    nombre: "dat-botom",
+                    x: 5,
+                    y: 6,
+                    type: "e",
+                    component: <DativoDown />
+                }
+            ],
+            options: [
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "C",
+                    comp: <Carbono />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "Cl",
+                    comp: <Cloro />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                },
+                {
+                    name: "S",
+                    comp: <Azufre />
+                },
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                }
             ]
         }
     ];
@@ -392,6 +502,7 @@ const Lewis = () => {
                     <button onClick={() => changeConsigna(0)}>H4C2</button>
                     <button onClick={() => changeConsigna(1)}>H2O</button>
                     <button onClick={() => changeConsigna(2)}>H2SO4</button>
+                    <button onClick={() => changeConsigna(3)}>HClO4</button>
                 </div>
             </div>
             <div>
@@ -457,10 +568,18 @@ const Carbono = () => {
     )
 }
 
-const Sulfuro = () => {
+const Azufre = () => {
     return (
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center",margin: "5px", backgroundColor: "#8d00ff", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
             S
+        </div>
+    )
+}
+
+const Cloro = () => {
+    return (
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center",margin: "5px", backgroundColor: "#D433FF", color: "white", width: "40px", height: "40px", borderRadius: "20px" }}>
+            Cl
         </div>
     )
 }
