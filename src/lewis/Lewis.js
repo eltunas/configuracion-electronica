@@ -61,7 +61,7 @@ const Lewis = () => {
                     type: "a",
                     component: <Carbono />
                 }, {
-                    nombre: "cov-hor",
+                    nombre: "cov-hor-doble",
                     x: 4,
                     y: 2,
                     type: "e",
@@ -102,14 +102,23 @@ const Lewis = () => {
                 {
                     name: "S",
                     comp: <Azufre />
+                }, {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "H",
                     comp: <Hidrogeno />
+                },{
+                    name: "cov-hor-doble",
+                    comp: <CovalenteHorizontalDoble />
                 },
                 {
                     name: "C",
                     comp: <Carbono />
+                },  {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "H",
@@ -122,11 +131,17 @@ const Lewis = () => {
                 {
                     name: "O",
                     comp: <Oxigeno />
+                },{
+                    name: "cov-ver",
+                    comp: <CovalenteVertical />
                 },
                 {
                     name: "C",
                     comp: <Carbono />
-                },
+                },  {
+                    name: "cov-ver",
+                    comp: <CovalenteVertical />
+                }
             ]
         },
         {
@@ -167,6 +182,9 @@ const Lewis = () => {
                 {
                     name: "H",
                     comp: <Hidrogeno />
+                },  {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "S",
@@ -179,6 +197,9 @@ const Lewis = () => {
                 {
                     name: "H",
                     comp: <Hidrogeno />
+                },  {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "H",
@@ -263,13 +284,13 @@ const Lewis = () => {
                     type: "a",
                     component: <Oxigeno />
                 },  {
-                    nombre: "cov-ver",
+                    nombre: "dat-up",
                     x: 4,
                     y: 3,
                     type: "e",
                     component: <DativoUp />
                 },  {
-                    nombre: "cov-ver",
+                    nombre: "dat-down",
                     x: 4,
                     y: 5,
                     type: "e",
@@ -283,6 +304,9 @@ const Lewis = () => {
                 }, {
                     name: "C",
                     comp: <Carbono />
+                }, {
+                    name: "cov-hor",
+                    component: <CovalenteHorizontal />
                 },
                 {
                     name: "S",
@@ -291,6 +315,12 @@ const Lewis = () => {
                 {
                     name: "C",
                     comp: <Carbono />
+                }, {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
+                },{
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "H",
@@ -309,14 +339,26 @@ const Lewis = () => {
                 },{
                     name: "O",
                     comp: <Oxigeno />
+                },{
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "S",
                     comp: <Azufre />
                 },{
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
+                },{
                     name: "O",
                     comp: <Oxigeno />
-                },
+                },{
+                    name: "dat-up",
+                    comp: <DativoUp />
+                }, {
+                    name: "dat-down",
+                    comp: <DativoDown />
+                }
             ]
         },
         {
@@ -394,8 +436,10 @@ const Lewis = () => {
                 {
                     name: "H",
                     comp: <Hidrogeno />
-                },
-                {
+                }, {
+                    name: "dat-right",
+                    comp: <DativoDer />
+                }, {
                     name: "O",
                     comp: <Oxigeno />
                 },
@@ -406,29 +450,109 @@ const Lewis = () => {
                 {
                     name: "H",
                     comp: <Hidrogeno />
-                },
-                {
+                }, {
+                    name: "dat-up",
+                    comp: <DativoUp />
+                }, {
+                    name: "dat-botom",
+                    comp: <DativoDown />
+                }, {
                     name: "O",
                     comp: <Oxigeno />
                 },
                 {
                     name: "Cl",
                     comp: <Cloro />
-                },
-                {
+                }, {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
+                }, {
                     name: "O",
                     comp: <Oxigeno />
                 },
                 {
                     name: "S",
                     comp: <Azufre />
+                }, {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
+                }, {
+                    name: "O",
+                    comp: <Oxigeno />
+                }
+            ]
+        },
+        {
+            nombre: "CO2",
+            items: [
+                {
+                    nombre: "O",
+                    x: 2,
+                    y: 4,
+                    type: "a",
+                    component: <Oxigeno />
+                },{
+                    nombre: "cov-hor-doble",
+                    x: 3,
+                    y: 4,
+                    type: "e",
+                    component: <CovalenteHorizontalDoble />
+                },{
+                    nombre: "C",
+                    x: 4,
+                    y: 4,
+                    type: "a",
+                    component: <Carbono />
+                },{
+                    nombre: "cov-hor-doble",
+                    x: 5,
+                    y: 4,
+                    type: "e",
+                    component: <CovalenteHorizontalDoble />
+                },{
+                    nombre: "O",
+                    x: 6,
+                    y: 4,
+                    type: "a",
+                    component: <Oxigeno />
+                }
+            ],
+            options: [
+                {
+                    name: "O",
+                    comp: <Oxigeno />
+                }, {
+                    name: "cov-hor-doble",
+                    comp: <CovalenteHorizontalDoble />
+                }, {
+                    name: "H",
+                    comp: <Hidrogeno />
+                }, {
+                    nombre: "dat-up",
+                    comp: <DativoUp />
+                },{
+                    name: "S",
+                    comp: <Azufre />
+                }, {
+                    name: "cov-hor-doble",
+                    comp: <CovalenteHorizontalDoble />
+                }, {
+                    name: "C",
+                    comp: <Carbono />
+                },
+                {
+                    name: "H",
+                    comp: <Hidrogeno />
+                }, {
+                    name: "cov-hor",
+                    comp: <CovalenteHorizontal />
                 },
                 {
                     name: "O",
                     comp: <Oxigeno />
                 }
             ]
-        }
+        },
     ];
 
     const [selectedConsigna, setConsigna] = useState(0);
@@ -457,7 +581,7 @@ const Lewis = () => {
                 if (element.type === "a") {
                     return <Atom xAtom={x} yAtom={y} name={element.nombre} comp={element.component} molecula={molecula} />
                 } else {
-                    return <Bond comp={element.component} />
+                    return <Bond yBond={y} xBond={x} name={element.nombre} comp={element.component} />
                 }
             } else {
                 //espacio en blanco
@@ -493,16 +617,42 @@ const Lewis = () => {
         )
     }
 
+    const Bond = ({ comp, yBond, xBond, name }) => {
+         //cuando se le hace click, checkear si el seleccionado de opciones es el mismo y cambiar al atomo que corresponde
+         const handleOnClick = () => {
+            console.log(selectedOption)
+            console.log(selectedOption.name)
+            if(selectedOption && selectedOption.name.toUpperCase() === name.toUpperCase()) {
+                const newUsed = [...usedOptions];
+                newUsed.push(selectedOption.id);
+                setUsedOptions(newUsed);
+
+                const newCorrect = [...correctAtoms];
+                newCorrect.push(""+xBond+yBond)
+                setCorrectAtoms(newCorrect);
+
+                setSelectedOption({})
+            }
+        }
+        
+        return (
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", width: "50px", height: "50px", fontSize: "10" }} onClick={() => handleOnClick()}>
+                {correctAtoms.includes(""+xBond+yBond) ? <>{comp}</> : <>O</>}
+            </div>
+        )
+    }
+
 
     return (<>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 Ubica los elementos el los lugares correspondientes de la molecula en base a sus enlaces
                 <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-                    <button onClick={() => changeConsigna(0)}>H4C2</button>
-                    <button onClick={() => changeConsigna(1)}>H2O</button>
-                    <button onClick={() => changeConsigna(2)}>H2SO4</button>
-                    <button onClick={() => changeConsigna(3)}>HClO4</button>
+                    <button style={{width: "60px", height: "30px", backgroundColor: "#232DCA", color: "white", borderRadius: "10px", margin: "5px"}} onClick={() => changeConsigna(0)}>H4C2</button>
+                    <button style={{width: "60px", height: "30px", backgroundColor: "#232DCA", color: "white", borderRadius: "10px", margin: "5px"}} onClick={() => changeConsigna(1)}>H2O</button>
+                    <button style={{width: "60px", height: "30px", backgroundColor: "#232DCA", color: "white", borderRadius: "10px", margin: "5px"}} onClick={() => changeConsigna(2)}>H2SO4</button>
+                    <button style={{width: "60px", height: "30px", backgroundColor: "#232DCA", color: "white", borderRadius: "10px", margin: "5px"}} onClick={() => changeConsigna(3)}>HClO4</button>
+                    <button style={{width: "60px", height: "30px", backgroundColor: "#232DCA", color: "white", borderRadius: "10px", margin: "5px"}} onClick={() => changeConsigna(4)}>CO2</button>
                 </div>
             </div>
             <div>
@@ -532,12 +682,6 @@ const Lewis = () => {
             </div>
         </div>
     </>)
-}
-
-const Bond = ({ comp }) => {
-    return (<div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", width: "50px", height: "50px", fontSize: "10" }}>
-        {comp}
-    </div>)
 }
 
 const Empty = () => {
